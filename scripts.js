@@ -13,6 +13,18 @@ function calculateFees() {
     // Tổng tiền cần chia
     const totalFee = courtFee + shuttleFee;
 
+    if (numWomen === 0) {
+        // Nếu không có nữ, chia đều toàn bộ chi phí cho nam
+        const perManFee = numMen > 0 ? (totalFee / numMen).toFixed(2) : 0;
+
+        // Hiển thị kết quả
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('totalFee').innerText = `Tổng tiền cần chia: ${totalFee.toLocaleString()} VND`;
+        document.getElementById('perWoman').innerText = `Không có nữ tham gia.`;
+        document.getElementById('perMan').innerText = `Tiền mỗi Nam phải trả: ${parseFloat(perManFee).toLocaleString()} VND`;
+        return;
+    }
+
     // Tính tổng tiền nữ đóng
     const totalWomanFee = numWomen * womanFee;
 
