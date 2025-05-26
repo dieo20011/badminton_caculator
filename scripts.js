@@ -4,8 +4,8 @@ function calculateFees() {
     const numShuttles = parseInt(document.getElementById('numShuttles').value) || 0;
     const courtFee = parseFloat(document.getElementById('courtFee').value) || 0;
 
-    let womanFee = 40000; // Tiền mỗi nữ đóng mặc định
-    const shuttleCostPerUnit = 21500; // Giá mỗi cầu
+    let womanFee = 45000; // Tiền mỗi nữ đóng mặc định
+    const shuttleCostPerUnit = 23000; // Giá mỗi cầu
 
     // Tổng tiền cầu
     const shuttleFee = numShuttles * shuttleCostPerUnit;
